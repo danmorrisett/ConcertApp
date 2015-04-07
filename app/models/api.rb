@@ -1,15 +1,15 @@
 class Api
 
   def initialize
-    @conn = Faraday.new(:url => 'http://api.jambase.com/events?artistId=2698&zipCode=95128&radius=50&page=0&api_key=
-')
+    @conn = Faraday.new(:url => 'http://api.jambase.com')
   end
 
-  def projects(token)
+  def shows(token)
     response = @conn.get do |req|
-      req.headers['X-Originating-Ip: 128.177.172.2
-'] = 'application/json'
+      req.url "/events?artistId=2698&zipCode=95128&radius=50&page=0&api_key="
+      req.headers['Content-Type'] = 'application/json'
     end
+
     JSON.parse(response.body, symbolize_names: true)
 
   if response.status == 403
