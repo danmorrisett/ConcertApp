@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rails_12factor', group: :production
+
 gem 'faraday', '~> 0.9.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
