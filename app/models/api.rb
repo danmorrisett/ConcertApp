@@ -4,17 +4,12 @@ class Api
     @conn = Faraday.new(:url => 'http://api.jambase.com')
   end
 
-  def shows(token)
+  def boulder_theater_shows
     response = @conn.get do |req|
-      req.url "/events?artistId=2698&zipCode=95128&radius=50&page=0&api_key=6cxknuxyrakr8jwe8zcq8sjf"
+      req.url "/events?venueId=19&page=0&api_key=be6gbp936qheatebegpgrs43"
       req.headers['Content-Type'] = 'application/json'
     end
-    
-    if response.status == 403
-      403
-    else
-      JSON.parse(response.body, symbolize_names: true)
-    end
+    JSON.parse(response.body, symbolize_names: true)
   end
 
 end
