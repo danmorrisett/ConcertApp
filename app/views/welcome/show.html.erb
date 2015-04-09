@@ -1,8 +1,9 @@
 <h1> Show me the page </h1>
 
+
   <p><% @shows[1].each do |array| %></p>
   <%= link_to "#{array[:Artists][0][:Name]}", "http://www.bouldertheater.com/?x=0&y=0&s=venue+id" %>
-  <%= array[:Date] %>
+  <%= Date.parse(array[:Date]).strftime("%F%T") %>
   <br/>
   <hr>
   <% end %>
