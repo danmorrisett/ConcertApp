@@ -1,21 +1,21 @@
 class TicketsController < ApplicationController
+  before_action :set_shows
 
 
   def create
-    @ticket = Ticket.new
+    @ticket = @show.tickets.new
+    @ticket.user_id = current_user.id
     if @ticket.save
       flash[:notice] = 'Success!!!'
-      redirect_to '/'
+      redirect_to shows_path
     else
       render :new
     end
   end
 
+  private
 
-
-  def tickets_params
-        params.require(:ticket).permit(:username, :show_id, :user_id)
-      end
-
-
+  def set_shows
+    @show = Show.find(params[:show_id])
+  end
 end

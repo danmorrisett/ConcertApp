@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   get 'show', to: 'welcome#show'
 
-  resources :tickets
+
+  resources :shows, only: [:index] do
+    resources :tickets, only: [:create]
+  end
 
   get '/sign-up' => 'registrations#new'
   post '/sign-up' => 'registrations#create'

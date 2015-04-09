@@ -1,0 +1,22 @@
+<div class= "container">
+    <div class="text-center">
+    <h1> Boulder Theater </h1>
+  </div>
+</div>
+
+  <p><% @shows.each do |show| %></p>
+    <td>
+      <%= link_to show.name, "http://www.bouldertheater.com/?x=0&y=0&s=venue+id" %>
+      <%= show.date.strftime("%m/%d/%y") %>
+      <% show.users.each do |user| %>
+        <%= user.username %>
+      <% end %>
+        <div class= "pull-right">
+      <%= form_for [show, @ticket] do |f|%>
+            <%= f.submit "Rock Out!", class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </td>
+  <br/>
+  <hr>
+  <% end %>
