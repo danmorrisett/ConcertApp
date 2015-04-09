@@ -1,9 +1,23 @@
-<h1> Show me the page </h1>
+<h1> Boulder Theater </h1>
 
 
   <p><% @shows[1].each do |array| %></p>
+  <td>
   <%= link_to "#{array[:Artists][0][:Name]}", "http://www.bouldertheater.com/?x=0&y=0&s=venue+id" %>
-  <%= Date.parse(array[:Date]).strftime("%F%T") %>
+  <% show_name = "#{array[:Artists][0][:Name]}" %>
+  <%= Date.parse(array[:Date]).strftime("%m/%d/%y") %>
+
+
+    <% if current_user.tickets %>
+      <%= current_user.username %>
+    <% end %>
+
+          <div class= "pull-right">
+      <%= form_for @ticket do |f|%>
+            <%= f.submit "Rock Out!", class: "btn btn-danger" %>
+          <% end %>
+          </div>
+      </td>
   <br/>
   <hr>
   <% end %>

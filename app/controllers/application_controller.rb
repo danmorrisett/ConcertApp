@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  helper_method :current_user
+
+
   def ensure_current_user
     unless current_user
       flash[:error] = 'You must sign in'
