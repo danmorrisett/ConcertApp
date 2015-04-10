@@ -4,23 +4,26 @@
   </div>
 </div>
 
-<div class="grid">
-  <div class="grid">
-  <div class="col-2-3">
+<div class="container">
 
-  <p><% @shows.each do |show| %></p>
-    <td>
-      <%= link_to show.name, "http://www.bouldertheater.com/?x=0&y=0&s=venue+id" %>
-      <%= show.date.strftime("%m/%d/%y") %>
-      <%=  show.users.map {|user| user.username}.to_sentence %>
+      <tr>
+        <td>
+      <p><% @shows.each do |show| %></p>
+          <%= link_to show.name, "http://www.bouldertheater.com/?x=0&y=0&s=venue+id" %>
+          <%= show.date.strftime("%m/%d/%y") %>
+          <%=  show.users.map {|user| user.username}.to_sentence %>
+        </td>
 
-        <div class= "pull-right">
-      <%= form_for [show, @ticket] do |f|%>
-            <%= f.submit "Rock Out!", class: "btn btn-danger" %>
+        <td>
+            <div class= "pull-right">
+          <%= form_for [show, @ticket] do |f|%>
+                <%= f.submit "Rock Out!", class: "btn btn-danger" %>
           <% end %>
-        </div>
-      </td>
+            </div>
+        </td>
+      </tr>
+
+        <br/>
+        <hr>
+    <% end %>
 </div>
-  <br/>
-  <hr>
-  <% end %>

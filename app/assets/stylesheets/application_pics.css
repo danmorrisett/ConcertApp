@@ -1,0 +1,69 @@
+/*.split {
+ width: 70%;
+ margin: 65px auto 0;
+ padding: 10px;
+ text-align: center;
+ background: #eaeaea ;
+ border-radius: 5px;
+ border: 1px solid #888;
+ font-size: 30px;
+ font-family: 'Oswald', sans-serif;
+
+
+ transition: background-color 0.5s ease;
+}*/
+
+.lead img {
+  margin-left: 100px;
+  width: 629px;
+}
+
+.mybtn {
+  position: relative;
+  display: block;
+  width: 250px;
+  margin: 20px auto;
+  padding: 10px;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transform-style: flat;
+  transition: all 250ms ease-out;
+
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+  }
+}
+
+/* Paper effect – slightly raised off background */
+.paper {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+  border-color: #dedede;
+}
+
+/* Raised effect – pushes up on hover */
+.paper-raise {
+  &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+
+    &:before {
+			box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+    }
+  }
+}
