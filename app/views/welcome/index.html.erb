@@ -1,5 +1,14 @@
 <h1> Hello </h1>
+<div class='box-container container-fluid'>
 
 <%= link_to "Shows", shows_path %>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3055.547291362653!2d-105.27771071296694!3d40.01855868068501!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876bec287ba341d3%3A0x6af710129906b6bc!2sBoulder+Theater!5e0!3m2!1sen!2sus!4v1428520757708" width="600" height="450" frameborder="0" style="border:0"></iframe>
+<div class="row equal">
+    <div class="col-md-4">
+      <p class="lead"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3055.547291362653!2d-105.27771071296694!3d40.01855868068501!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876bec287ba341d3%3A0x6af710129906b6bc!2sBoulder+Theater!5e0!3m2!1sen!2sus!4v1428520757708" width="600" height="450" frameborder="0" style="border:0"></iframe></p>
+    </div>
+    <div class="col-md-4">
+      <p class="lead"><%=image_tag(src='https://farm1.staticflickr.com/42/80559709_6f9c099df7_o.jpg')%></p>
+    </div>
+</div>
+</div>
