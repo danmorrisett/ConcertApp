@@ -6,7 +6,7 @@ class Api
 
   def boulder_theater_shows
     response = @conn.get do |req|
-      req.url "/events?venueId=19&page=0&api_key=6cxknuxyrakr8jwe8zcq8sjf"
+      req.url "/events?venueId=19&page=0&api_"
       req.headers['Content-Type'] = 'application/json'
     end
     JSON.parse(response.body, symbolize_names: true)
